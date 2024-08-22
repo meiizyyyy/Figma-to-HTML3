@@ -24,6 +24,7 @@
 		<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 		<link rel="manifest" href="./assets/favicon/manifest.json" />
+		<link rel="stylesheet" href="./assets/css/responsive.css" />
 		<meta name="msapplication-TileColor" content="#ffffff" />
 		<meta name="msapplication-TileImage" content="./assets/favicon/ms-icon-144x144.png" />
 		<meta name="theme-color" content="#ffffff" />
@@ -34,9 +35,9 @@
 		<header class="header">
 			<div class="container">
 				<div class="header-top animate__animated animate__backInDown">
-					<a href="./"><img src="./assets/img/logo.svg" alt="shine smile" class="logo" /></a>
+					<a href="./"><img src="./assets/img/logo.svg" alt="shine smile" class="logo header__logo" /></a>
 					<nav class="navbar">
-						<ul class="navbar__list">
+						<ul class="navbar__list" id="navbar__list--pc">
 							<li class="navbar__item">
 								<a href="#!" class="navbar__link navbar__link--active">Home</a>
 							</li>
@@ -62,9 +63,7 @@
 					<!-- left -->
 					<section class="hero__content">
 						<h1 class="hero__heading animate__animated animate__fadeInLeft">Exceptional dental care for all ages.</h1>
-						<p class="hero__desc animate__animated animate__fadeInLeft ">
-							Exceptional dental care for all ages. Your great smile begins with a great dentist.
-						</p>
+						<p class="hero__desc animate__animated animate__fadeInLeft">Exceptional dental care for all ages. Your great smile begins with a great dentist.</p>
 						<div class="hero__row">
 							<a href="#!" class="btn animate__animated animate__backInLeft animate__delay-1s">Book Online</a>
 							<span class="hero__phone animate__animated animate__backInLeft animate__delay-2s">or call (123) 456-7890</span>
@@ -80,11 +79,51 @@
 				</section>
 			</div>
 		</header>
+
+		<div class="mobile-header">
+			<input type="checkbox" name="menu-checkbox" id="menu-checkbox" class="menu-checkbox" hidden />
+			<label for="menu-checkbox">
+				<svg class="menu-header__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+					<path
+						fill="currentColor"
+						d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z" />
+				</svg>
+			</label>
+
+			<!-- overlay -->
+			<label for="menu-checkbox" class="menu-overlay"></label>
+			<!-- menu content  -->
+			<div class="menu-drawer">
+				<!-- menu top  -->
+				<div class="menu-drawer__top">
+					<!-- logo  -->
+					<a href="./"><img src="./assets/img/logo.svg" alt="shine smile" class="logo" /></a>
+					<!-- close  -->
+					<label for="menu-checkbox">
+						<svg class="close__menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+							<path
+								fill="currentColor"
+								d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" />
+						</svg>
+					</label>
+				</div>
+
+				<!-- nav mobile -->
+				<ul id="navbar__list--mobile"></ul>
+				<script>
+					const navPC = document.querySelector("#navbar__list--pc");
+					const navMobile = document.querySelector("#navbar__list--mobile");
+
+					navMobile.innerHTML = navPC.innerHTML;
+				</script>
+			</div>
+		</div>
+
 		<main>
 			<!-- our service -->
 			<section class="service">
 				<div class="container">
-					<h2 class="service__heading section-heading " data-aos="fade-right">Our services</h2>
+					<h2 class="service__heading section-heading" data-aos="fade-right">Our services</h2>
 					<p class="service__desc section-desc" data-aos="fade-right">Exceptional dental care for all ages. Your great smile begins with a great dentist.</p>
 
 					<div class="service__row">

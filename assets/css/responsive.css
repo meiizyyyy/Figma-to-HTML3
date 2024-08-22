@@ -1,0 +1,135 @@
+/* PC */
+@media (min-width: 992px) {
+	.mobile-header {
+		display: none;
+	}
+}
+
+/* Tablet & Mobile */
+@media (max-width: 991.98px) {
+	/* ẩn navbar  */
+	.navbar {
+		display: none;
+	}
+	/* Chuyển logo vào giữa */
+	.header-top {
+		position: relative;
+	}
+
+	.header__logo {
+		position: absolute;
+		left: 50%;
+		translate: -50% -50%;
+	}
+
+	/* căn vị trí icon menu */
+	.menu-header__icon {
+		position: absolute;
+		top: 38px;
+		left: 26px;
+		color: #fff;
+		width: 24px;
+	}
+
+	/* overlay */
+	.menu-overlay {
+		position: fixed;
+		background: rgba(0, 0, 0, 0.3);
+		inset: 0;
+		z-index: 1;
+
+		opacity: 0;
+		visibility: hidden;
+		transition: 0.5s;
+	}
+
+	/* check menucheckbox */
+	.menu-checkbox:checked ~ .menu-overlay {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	/* menu drawer  */
+	.menu-drawer {
+		position: fixed;
+		background: #2e1919;
+		inset: 0 40% 0 0;
+		z-index: 2;
+		transform: translateX(-100%);
+		transition: 0.5s;
+		padding: 60px;
+	}
+
+	.menu-checkbox:checked ~ .menu-drawer {
+		transform: translateX(0);
+	}
+
+	.close__menu {
+		width: 24px;
+		color: #fff;
+	}
+	.menu-drawer__top {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	#navbar__list--mobile {
+		margin-top: 25px;
+	}
+	.navbar__list {
+		margin-top: 25px;
+		flex-direction: column;
+	}
+	.navbar__link {
+		display: block;
+		font-size: 2rem;
+		text-align: start;
+	}
+
+	/* hero  */
+	.hero {
+		flex-direction: column;
+		column-gap: 50px;
+	}
+	.hero__content {
+		order: 2;
+		width: 80%;
+		text-align: center;
+		margin: 22px auto;
+	}
+	.hero__media {
+		order: 1;
+	}
+	.hero__row {
+		justify-content: center;
+	}
+
+	.service__row {
+		flex-direction: column;
+		row-gap: 20px;
+	}
+
+	.service__img {
+		width: 100%;
+	}
+    .service__list{
+        text-align: center;
+    }
+    .service-item{
+        width: 90%;
+        text-align: start;
+    }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 991.98) {
+}
+
+/* Mobile */
+@media (max-width: 767.98px) {
+}
+
+.footer {
+	display: none;
+}
